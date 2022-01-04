@@ -24,6 +24,15 @@ url: "https://thebyteman.com/" # the base hostname & protocol for your site, e.g
 linkedin_username: usman-shah-7u7
 github_username:  Byteman0xD
 
+# Adding Author name
+author: Thebyteman
+
+#Adding Copyright symbol
+copyright: "Thebyteman"
+
+#Adding Logo
+title-logo: 
+
 # Build settings
 markdown: kramdown
 theme: minima
