@@ -2,7 +2,7 @@
 layout: post
 title:  "LOG4J-Solr-THM-Walkthrough"
 date:   2022-01-04 17:03:35 +0530
-categories: jekyll update
+category: walkthroughs
 ---
 
 The room for practicing Log4j can be found here: https://tryhackme.com/room/solar

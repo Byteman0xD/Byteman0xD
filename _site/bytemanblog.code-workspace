@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"name": "Byteman0xD",
+			"path": "."
+		},
+		{
+			"name": "_layouts",
+			"path": "\\\\wsl.localhost\\kali-linux\\var\\lib\\gems\\2.7.0\\gems\\minima-2.5.1\\_layouts"
+		},
+		{
+			"name": "_includes",
+			"path": "\\\\wsl.localhost\\kali-linux\\var\\lib\\gems\\2.7.0\\gems\\minima-2.5.1\\_includes"
+		},
+		{
+			"name": "_sass",
+			"path": "\\\\wsl.localhost\\kali-linux\\var\\lib\\gems\\2.7.0\\gems\\minima-2.5.1\\_sass"
+		},
+		{
+			"name": "assets",
+			"path": "\\\\wsl.localhost\\kali-linux\\var\\lib\\gems\\2.7.0\\gems\\minima-2.5.1\\assets"
+		}
+	],
+	"settings": {}
+}
