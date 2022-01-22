@@ -4,6 +4,9 @@ title:  "LOG4J-Solr-THM-Walkthrough"
 date:   2022-01-04 17:03:35 +0530
 categories: jekyll update
 ---
+
+The room for practicing Log4j can be found here: https://tryhackme.com/room/solar
+
 {% highlight ruby %}Phase 1: Reconnaissance{% endhighlight %}
 
 We explore the web interface at http://machine_ip[:]8983; we explore and look around for the log files, to see which path or URL endpoint triggers the logging. 
