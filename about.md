@@ -4,15 +4,21 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+Welcome to my blog, 
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+My name is Usman and i am an IT Security Professional currently working as a Security Operations Engineer. I deal with Cybersecurity Incidents on a daily basis, my major work involves threat hunting.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+I am CCNP-Security, NSE4 and CEHv11 Certified. I plan to achieve the expert level certifications in the fiels of Network Security and Cybersecurity, currently working towards OSCP and CCIE.
 
+This blog is a way of sharing back knowledge with the community, as i intend to populate my site with blogs related to:
 
-[jekyll-organization]: https://github.com/jekyll
+* Network Security
+* Cyber Security
+* Protocol Deep-dives - by explaining RFCs in a short and simple way possible.
+* Walkthroughs of challenges from different CTF platforms.
+
+For any queries or suggestions or collaborations, reach me out at 'thebugcraft@gmail.com' OR you can also DM me on Linkedin (Link provided in the footer).
+
+I hope you like my content.
+
+Thank you.
