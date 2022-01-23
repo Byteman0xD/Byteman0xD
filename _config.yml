@@ -16,9 +16,7 @@
 title: Thebyteman
 email: thebugcraft@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-   Welcome to my Blog. 
-   A blog-heaven for all IT Security Lovers, since 
-   you don't have to read the RFCs because I did.
+   One bit at a time to fill your byte of knowledge.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://thebyteman.com/" # the base hostname & protocol for your site, e.g. http://example.com
 linkedin_username: usman-shah-7u7
