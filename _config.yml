@@ -22,7 +22,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://thebyteman.com/" # the base hostname & protocol for your site, e.g. http://example.com
 linkedin_username: usman-shah-7u7
-github_username:  Byteman0xD
+#github_username:  Byteman0xD
 
 # Adding Author name
 author: Thebyteman
@@ -30,7 +30,7 @@ author: Thebyteman
 copyright: "Thebyteman"
 
 #Adding Logo
-title-logo: 
+title-logo: /images/site-logo.png
 
 # Build settings
 markdown: kramdown
