@@ -17,7 +17,7 @@ This blog is a way of sharing back knowledge with the community, as i intend to 
 * Protocol Deep-dives - by explaining RFCs in a short and simple way possible.
 * Walkthroughs of challenges from different CTF platforms.
 
-For any queries or suggestions or collaborations, reach me out at 'thebugcraft@gmail.com' OR you can also DM me on Linkedin (Link provided in the footer).
+For any queries/suggestions, reach me out at 'thebugcraft@gmail.com' OR you can also DM me on Linkedin (Link provided in the footer).
 
 I hope you like my content.
 
