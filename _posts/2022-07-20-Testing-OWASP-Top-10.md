@@ -236,16 +236,20 @@ Which means that we can add things like forwardslashes, colon, something like c:
 
 ref: [reference](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection)
 
-so if we copy a sample payload from the above repo like below:
+so if we copy a sample payload from the above reference repo like below:
 
 <?xml version="1.0" encoding="ISO-8859-1"?>
  <!DOCTYPE foo [  
  		 <!ELEMENT foo ANY >
  		 <!ENTITY xxe SYSTEM "file:///etc/passwd" >
  ]>
- <foo>&xxe;</foo>
+<foo>&xxe;</foo>
   
-  so, here we have our Doctype, and we declare an element inside the DTD, and we also have an entity named XXE and we are calling out the SYSTEM here, before we just declared entity name value, but here we are adding something extra that is SYSTEM. SYSTEM is a keyword used in an entity to let the parser know that the resource is external and should be stored inside the entity - which allows us to put a malicious content inside it - what also the SYSTEM does is that it allows us to pull data from the SYSTEM itself, so what we are trying to do is, to pull the etc/passwd file from the SYSTEM. and then we have our child element, of foo, and calling our variable with &xxe, which is just a placeholder for our file:///etc/passwd command. 
+the sample code can be clearly viewed here:
+
+![xxesamplecode](https://raw.githubusercontent.com/Byteman0xD/Byteman0xD/main/assets/xxeattackexample.jpg)
+
+so, here we have our Doctype, and we declare an element inside the DTD, and we also have an entity named XXE and we are calling out the SYSTEM here, before we just declared entity name value, but here we are adding something extra that is SYSTEM. SYSTEM is a keyword used in an entity to let the parser know that the resource is external and should be stored inside the entity - which allows us to put a malicious content inside it - what also the SYSTEM does is that it allows us to pull data from the SYSTEM itself, so what we are trying to do is, to pull the etc/passwd file from the SYSTEM. and then we have our child element, of foo, and calling our variable with &xxe, which is just a placeholder for our file:///etc/passwd command. 
 
 **XXE Attacks and Defenses**
 
