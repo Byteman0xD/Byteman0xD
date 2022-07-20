@@ -89,7 +89,7 @@ while they are good to have, but they arent reliable.
 4. We can also use intruder attacks in BS. Its actually a little slow for the community version - under the **extender->BApp Store**, we can download a Turbo Intruder, to increase the speed of our intruder attacks
 5. There are other features like, comparer, decoder etc, but we are mostly going to use the proxy feature.
 
-{%highlight ruby%}SQL Injection:{%endhighlight%}
+{%highlight ruby%}1. SQL Injection:{%endhighlight%}
 
 SQLi is an attack in which malicious SQL Statements are injected into a SQL DB.
 
@@ -139,7 +139,7 @@ But one can still evade this by statement like this: **SELECT * FROM users WHERE
 
 **Defense 2: Sanitizing input:** i.e statements like 1=1 should be sanitized and not allowed. you should have single qoutes in there, etc.
 
-{%highlight ruby%}Broken Authentication:{%endhighlight%}
+{%highlight ruby%}2. Broken Authentication:{%endhighlight%}
 
 That is using techniques such as , 
 **credential stuffing**
@@ -169,7 +169,7 @@ If we go to forgot password, and we try with known and unknown usernames, we can
 
 We can create a user account, log in and reload the page, capture it in burp, see the details, the token etc, you can log back out, refresh the page, capture it in burp and see if you still see the token or not, you can also check if the token is changed everytime you log in or not, there are lot of things you can do with tokens, broken authentication mainly focuses on session fixation, which does not seem to be a problem here.
 
-{%highlight ruby%}Sensitive Data Exposure:{%endhighlight%}
+{%highlight ruby%}3. Sensitive Data Exposure:{%endhighlight%}
 
 Imagine you are testing against a hospital website, and it is exposing PII or any other client personal information.
 
@@ -188,7 +188,7 @@ Exposure of headers or use of weak encyrption is not basically a sensitive data 
 
 Simply usage of weak ciphers or unused headers comes under low severity , but it is reportable.
 
-{%highlight ruby%}XML External Entities:{%endhighlight%}
+{%highlight ruby%}4. XML External Entities:{%endhighlight%}
 
 XXE Abuses or attacks systems that parses XML input, to get some information out of the system that we are attacking, we can do attacks like DOS, Local file disclosure, RCE, etc.
 
@@ -234,7 +234,7 @@ Which means that we can add things like forwardslashes, colon, something like c:
 
 ![XXE Example](https://raw.githubusercontent.com/Byteman0xD/Byteman0xD/main/assets/XXEexample.png)
 
-ref: [reference](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection)
+ref: [https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection)
 
 so if we copy a sample payload from the above reference repo like below:
 
@@ -266,7 +266,7 @@ How to defend against this: we need to disable completely the DTDs.
 
 Wether you are able to exploit using xxe injection or not, bypassing the upload feature is in itself a finding which can be reported.
 
-{%highlight ruby%}Broken Access Control:{%endhighlight%}
+{%highlight ruby%}5. Broken Access Control:{%endhighlight%}
 
 There are so many different vulnerabilities that can fall into this category.
 This category is simple a use-case where user gets access to somewhere they shouldnt. - as simple as that.
@@ -283,3 +283,110 @@ we write a comment, give rating and answer the captcha, then we go to **inspect*
 There can field in such places like, **hidden** as shown above, or **field=password** where you can change password to text and the password is then visible to you.
 
 This is a clear indication of an ability to bypass access control features, hence the borken access control category.
+
+{%highlight ruby%}6. Security Misconfigurations:{%endhighlight%}
+
+This is also sort of like many of the above, this is just a catch-all category.
+
+like use of default creds, weak creds, stack tracing (the errors you get which might reveal critical info, like while doing the SQLi)
+
+![SecurityMisconfigurations](https://raw.githubusercontent.com/Byteman0xD/Byteman0xD/main/assets/securitymisconfigurations.jpg)
+
+{%highlight ruby%}7. Cross-site Scripting:{%endhighlight%}
+
+There are three type of XSS, shown below:
+
+![XSS](https://raw.githubusercontent.com/Byteman0xD/Byteman0xD/main/assets/XSS.jpg)
+
+Reflected: server reads the request and responds back with that request onto the browser, reflecting on the page. If we leave the page and come back later, it will go away. Unless we make that request again.
+
+Persistent/Stored: Here, we inject a malicious payload and then it is stored onto the server, so, even if we leave and come back the payload is still there..
+
+DOM XSS: Document Object Model, this is in javascript, so when you visit a website, it shows you some html, some javascript it sends it to your browser - when you wanna modify that content - its called the DOM attack.
+
+we can exploit the DOM specifically. DOM and reflected are both client-side attacks.
+
+lets say we have a php page, and we just call it index.php, the code looks like below:
+
+<?php
+$username=$_GET['Username']
+echo "Hi $username!";
+?>
+
+Suppose the URL looks something like, 
+
+**index.php?username=usman**
+its gonna say "Hi Usman" - when you come to the webpage.
+
+now, what if we have something like:
+
+index.php?username=<script>alert(1)</script> -> thats going to run javascript, and give us an alert pop-up box on the browser, and its gonna say '1' on the pop-up -> that is what reflective looks like.
+
+For stored, think about having a blog post, forum, and you can go and comment on those, what if you leave the above script tags on that comment field, and if the site is vulnerable -> so if everytime, if you or anyone else goes to that page, they can see the pop-up as well.
+
+Reflective and DOM requires Social engineering -> we can send someone a malicious link -> that malicious link might point to us, we might have some javascript running, gonna steal their cookie and send it to us, so, we need to know the user, send that crafted link and then get the cookie.
+
+For Stored -> we can do the same thing, without even doing social engineering -> because the malicious code is just sitting thier on the server.
+
+With XSS, we can perform DOS, deface a webpage, cookie stealing, keylogging etc.
+
+The most common and the best example is stealing cookie and showing pop-up as a POC of the vulnerability.
+
+Below is a blog-post on DOM XSS, its a bit hard to get the mind around, is a little complex -> the blogpost explains it really well.
+
+[https://www.scip.ch/en/?labs.20171214](https://www.scip.ch/en/?labs.20171214)
+
+In DOM, we have a **source** and a **Sink** - Source is where your malicious code goes into, and Sink is where it will get executed.
+
+Read the full article to get a good understanding of DOM Based XSS.
+
+Also a game for practicing your XSS skills - [https://xss-game.appspot.com/](https://xss-game.appspot.com/)
+
+![XSS2](https://raw.githubusercontent.com/Byteman0xD/Byteman0xD/main/assets/XSS2.jpg)
+
+{%highlight ruby%}8. Insecure Deserialization:{%endhighlight%}
+
+Serialization is taking the data, and convert the object to a format which can be put on to a disk and then can be sent over to a network or through a network. It can be serialized in XML, JSON, YAML, Binary etc - it is serialized and sent over.
+
+Deserialization: So, we deserialize the serialized malicious input that we use.
+
+i.e we create a payload, we serialize it and put it on the target area, the server then desrializes it and eventually executes our payload.
+
+These are kind of hard to find
+
+Read through the owasp top10 to get more clarity on this.
+
+Juiceshop does not have a good example for this.
+
+read up on **ysoserial** , a tool which people use quite a bit for finding this sort of bug.
+
+[https://github.com/frohoff/ysoserial](https://github.com/frohoff/ysoserial)
+
+read up on this, to understand what it does and how to use it.
+
+This vulnerability is something which you wont come across a lot, but it still belongs to the owasp top 10, because it can be very deadly.
+
+{%highlight ruby%}9. Using Components with Known Vulnerabilities:{%endhighlight%}
+
+You are gonna see this, when it comes to network pentesting, like the eternal blue.
+You can see these in webapps as well. You can use different tools you can use to find these known vulnerabilities, out-of-date kind of applications etc.
+
+In burpsuite, if you have the pro version, you can use the active scan feature, and from the Bapp store, you can use tools like **active scan++, retire.js (looks potential vulnerable javascript libraries), software vulnerabiilty scanner, java deserialization scanner, additional scanner checks, software version reporter** etc, there are many other bunch of tools - these are all part of the burp pro version.
+
+You can also use tools like wappalyzer to see the technology and language the website is running and look up on it, if its on the updated version or not etc.
+
+you can also run nessus against the website, ports on that server, etc.
+
+you can also go on shodan, where you can go up there and look up different vulnerabilites, for eg. looking machine still vulnerable to apache struts 2.
+
+An active patching schedule inside an organization is a must to not be a target of known vulnerabilities by a hacker.
+
+{%highlight ruby%}10. Insufficient Logging and Monitoring:{%endhighlight%}
+
+pretty much self-understood.
+
+i.e having visibility of all sorts of logs from your network, devices, websites, machines etc. 
+
+incorrect logins, bruteforce, user login, etc, the monitoring should be alerted whenever anything happens. There should be a monitoring team in the organization.
+
+When you do pentesting for a company - this can even go into the report like -> i was doing so and so penetration tests, and no one from the team even saw me do this let alone catch me -> insufficient logging and monitoring.
