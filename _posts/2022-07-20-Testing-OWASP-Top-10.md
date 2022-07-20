@@ -8,7 +8,7 @@ To get a basic understanding of OWASP TOP 10, we are going to test the owasp top
 
 {% highlight ruby %}Resources for OWASP Guide:{% endhighlight %}
 
-OWASP Top 10: [https://owasp.org/www-pdf-archive/OWASP_Top_10-2017_%28en%29.pdf.pdf](https://owasp.org/www-pdf-archive/OWASP_Top_10-2017_%28en%29.pdf.pdf) - check for latest 2021 and plus.
+OWASP Top 10: [https://owasp.org/Top10/](https://owasp.org/Top10/)
 
 OWASP Testing Checklist: [https://github.com/tanprathan/OWASP-Testing-Checklist](https://github.com/tanprathan/OWASP-Testing-Checklist)
 
