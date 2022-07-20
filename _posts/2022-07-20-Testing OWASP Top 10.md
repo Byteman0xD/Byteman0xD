@@ -107,5 +107,4 @@ SQLi is easy to avoid, but still happens most often. If Successful, we can read 
 
 Example:
 
-
-
+images/Screenshot 2022-07-20 113944.jpg
