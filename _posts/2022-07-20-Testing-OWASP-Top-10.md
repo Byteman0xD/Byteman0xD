@@ -6,6 +6,8 @@ category: general
 ---
 To get a basic understanding of OWASP TOP 10, we are going to test the owasp top 10 vulnerabilites on a Vulnerable website/tool called as "JUICESHOP".
 
+We will be covering the OWASP TOP 10, in the order of 2017 rankings.
+
 {% highlight ruby %}Resources for OWASP Guide:{% endhighlight %}
 
 OWASP Top 10: [https://owasp.org/Top10/](https://owasp.org/Top10/)
