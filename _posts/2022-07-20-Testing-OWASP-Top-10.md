@@ -178,7 +178,7 @@ look for open directories, critical files, critical information etc.
 
 look at **response headers in burp**, we can look at what kind of protections are in place
 
-You can go to ![securityheaders](https://securityheaders.com/) and look for websites headers that are included in responses, this is sensitive data exposure at a low level, but if headers like HSTS is missing, the severity can rank up.
+You can go to [securityheaders](https://securityheaders.com/) and look for websites headers that are included in responses, this is sensitive data exposure at a low level, but if headers like HSTS is missing, the severity can rank up.
 
 We should also be looking at the level of encryption the website is using , we can do that by using NMAP.
 
@@ -234,7 +234,7 @@ Which means that we can add things like forwardslashes, colon, something like c:
 
 ![XXE Example](https://raw.githubusercontent.com/Byteman0xD/Byteman0xD/main/assets/XXEexample.png)
 
-ref: ![reference](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection)
+ref: [reference](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection)
 
 so if we copy a sample payload from the above repo like below:
 
