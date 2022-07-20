@@ -108,5 +108,5 @@ SQLi is easy to avoid, but still happens most often. If Successful, we can read 
 
 Example:
 
-![[Pasted image 20220620194813.png]]
+
 
