@@ -108,6 +108,6 @@ SQLi is easy to avoid, but still happens most often. If Successful, we can read 
 
 Example:
 
-![SQLiExample](assets\SQLiexample.png)
+![SQLiExample](https://raw.githubusercontent.com/Byteman0xD/Byteman0xD/main/assets/SQLiexample.png)
 
 
