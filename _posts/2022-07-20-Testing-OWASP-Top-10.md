@@ -143,12 +143,19 @@ But one can still evade this by statement like this: **SELECT * FROM users WHERE
 
 That is using techniques such as , 
 **credential stuffing**
+
 **bruteforce attacks (i.e a rate-limiting feature should be there)**
+
 **use of weak/default passwords(Also comes under Sensitive Data Exposure OWASP Category)**
+
 **forgot passwords have knowledge-based questions etc**
+
 **plain text or weakly hashed password stored**
+
 **has missing MFA**
+
 **Exposes Session IDs in the URL and/or Does not rotate session ID after successfull logins (Called as **Session Fixation**)**
+
 **User sessions or tokens (i.e SSO Tokens) are not properly invalidated during logout or period of inactivity.**
 
 **Defenses are below:** - pretty straight-forward:
@@ -156,7 +163,7 @@ That is using techniques such as ,
 ![BrokenAuthentication Defenses](https://raw.githubusercontent.com/Byteman0xD/Byteman0xD/main/assets/BrokenAuthentication.png)
 
 We will logout from juiceshop and go to the login page 
-we do some username/password enumeration, and we see "invalid username or password" -> this is actually good, because some of the websites say invalid username , or incorrect password, which gives the other one away, considered to be a low level information leakage vulnerability.
+we do some username/password enumeration, and we see **invalid username or password** -> this is actually good, because some of the websites say invalid username , or incorrect password, which gives the other one away, considered to be a low level information leakage vulnerability.
 
 If we go to forgot password, and we try with known and unknown usernames, we can see the difference there as well, security questions pop-up only when a username is valid, otherwise they are greyed out. - this is also username enuemeration.
 
@@ -171,7 +178,7 @@ look for open directories, critical files, critical information etc.
 
 look at **response headers in burp**, we can look at what kind of protections are in place
 
-You can go to **![securityheaders.com](https://securityheaders.com)** and look for websites headers that are included in responses, this is sensitive data exposure at a low level, but if headers like HSTS is missing, the severity can rank up.
+You can go to ![securityheaders.com](https://securityheaders.com) and look for websites headers that are included in responses, this is sensitive data exposure at a low level, but if headers like HSTS is missing, the severity can rank up.
 
 We should also be looking at the level of encryption the website is using , we can do that by using NMAP.
 
@@ -202,15 +209,15 @@ Entity is like a variable, so to add an entity we say something like this:
 	]>
 
 we can include the above code, like this:
-<?xml="1.0" encoding="ISO-8859-1"?>
-<!DOCTYPE gift [
-		<!ENTITY from "Usman">
-  ]>
-<gift>
+**<?xml="1.0" encoding="ISO-8859-1"?>**
+**<!DOCTYPE gift [**
+		**<!ENTITY from "Usman">**
+  **]>**
+**<gift>**
 	<To>Frank</To>
  	<From>**&from;**</From>
 	<Item>Pokemon Cards</Item>
-</gift>
+**</gift>**
 
 Now, the doctype that we wrote is what is called as the **DocumentTypeDefinition**, famously abbreviated as the **DTD**  and we declared our entity within the DTD.
 
