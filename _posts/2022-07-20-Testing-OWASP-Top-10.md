@@ -108,8 +108,6 @@ SQLi is easy to avoid, but still happens most often. If Successful, we can read 
 
 Example:
 
-{
-    "pasteImage.path": "/assets/Screenshot 2022-07-20 113944.jpg"
-}
+![SQLiExample](https://github.com/Byteman0xD/Byteman0xD/blob/ce1ca1387357ec4eaf9d438e28368a5cd4d92dc7/assets/SQLiexample.jpg)
 
 
