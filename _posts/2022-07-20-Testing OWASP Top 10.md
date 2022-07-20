@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Testing OWASP Top 10"
-# date: 2022-07-20 10:55
+date: 2022-07-20 10:55
 category: general
 author: Thebyteman
 ---
