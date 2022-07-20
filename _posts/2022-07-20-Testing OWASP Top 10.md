@@ -111,3 +111,4 @@ Example:
     "pasteImage.path": "/assets/Screenshot 2022-07-20 113944.jpg"
 }
 
+
