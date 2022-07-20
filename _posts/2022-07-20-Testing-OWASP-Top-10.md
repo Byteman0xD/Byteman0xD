@@ -234,3 +234,48 @@ Which means that we can add things like forwardslashes, colon, something like c:
 
 ![XXE Example](https://raw.githubusercontent.com/Byteman0xD/Byteman0xD/main/assets/XXEexample.png)
 
+ref: ![reference](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection)
+
+so if we copy a sample payload from the above repo like below:
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+ <!DOCTYPE foo [  
+ 		 <!ELEMENT foo ANY >
+ 		 <!ENTITY xxe SYSTEM "file:///etc/passwd" >
+ ]>
+ <foo>&xxe;</foo>
+  
+  so, here we have our Doctype, and we declare an element inside the DTD, and we also have an entity named XXE and we are calling out the SYSTEM here, before we just declared entity name value, but here we are adding something extra that is SYSTEM. SYSTEM is a keyword used in an entity to let the parser know that the resource is external and should be stored inside the entity - which allows us to put a malicious content inside it - what also the SYSTEM does is that it allows us to pull data from the SYSTEM itself, so what we are trying to do is, to pull the etc/passwd file from the SYSTEM. and then we have our child element, of foo, and calling our variable with &xxe, which is just a placeholder for our file:///etc/passwd command. 
+
+**XXE Attacks and Defenses**
+
+Now we can save our exploit with a .xml extension to use it as our payload for attack.
+
+This attack will not work for juiceshop, as it doesnt work when its hosted on docker. 
+
+So the way we can do this, try to mostly spot places where you can upload documents. even if we dont get a shell or anything, can we bypass it from what its trying to do.
+for eg. the upload should only accept jpeg or pdf file but we try to upload the xml file .
+
+And if the exploit worked, you could see the passwd file .
+
+How to defend against this: we need to disable completely the DTDs.
+
+Wether you are able to exploit using xxe injection or not, bypassing the upload feature is in itself a finding which can be reported.
+
+{%highlight ruby%}Broken Access Control:{%endhighlight%}
+
+There are so many different vulnerabilities that can fall into this category.
+This category is simple a use-case where user gets access to somewhere they shouldnt. - as simple as that.
+
+![brokenaccesscontrol](https://raw.githubusercontent.com/Byteman0xD/Byteman0xD/main/assets/Brokenaccesscontrol.png)
+
+We can do this in juiceshop, by leaving a feedback comment in another users name.
+
+You can login from your test account, go to the feedback page 
+we write a comment, give rating and answer the captcha, then we go to **inspect**, and look for the field close to our email field, where it says **hidden**, we can just **delete** that field, and we can see our **user-id** -> this is true with real-life websites even with some big vendors ones as well, proper access control measures are done, instead they just hide from the end-user, which can easily seen using the inspect feature of our browser.
+
+![brokenaccesscontrol2](https://raw.githubusercontent.com/Byteman0xD/Byteman0xD/main/assets/Brokenaccesscontrol2.png.jpg)
+
+There can field in such places like, **hidden** as shown above, or **field=password** where you can change password to text and the password is then visible to you.
+
+This is a clear indication of an ability to bypass access control features, hence the borken access control category.
