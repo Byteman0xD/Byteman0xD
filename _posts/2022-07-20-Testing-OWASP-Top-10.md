@@ -8,11 +8,12 @@ To get a basic understanding of OWASP TOP 10, we are going to test the owasp top
 
 {% highlight ruby %}Resources for OWASP Guide:{% endhighlight %}
 
-OWASP Top 10: https://owasp.org/www-pdf-archive/OWASP_Top_10-2017_%28en%29.pdf.pdf - check for latest 2021 and plus.
+OWASP Top 10: [https://owasp.org/www-pdf-archive/OWASP_Top_10-2017_%28en%29.pdf.pdf](https://owasp.org/www-pdf-archive/OWASP_Top_10-2017_%28en%29.pdf.pdf) - check for latest 2021 and plus.
 
-OWASP Testing Checklist: https://github.com/tanprathan/OWASP-Testing-Checklist
+OWASP Testing Checklist: [https://github.com/tanprathan/OWASP-Testing-Checklist](https://github.com/tanprathan/OWASP-Testing-Checklist)
 
-OWASP Testing Guide: https://owasp.org/www-project-web-security-testing-guide/assets/archive/OWASP_Testing_Guide_v4.pdf
+OWASP Testing Guide: [https://owasp.org/www-project-web-security-testing-guide/assets/archive/OWASP_Testing_Guide_v4.pdf](https://owasp.org/www-project-web-security-testing-guide/assets/archive/OWASP_Testing_Guide_v4.pdf)
+   
    
 Always download owasp testing checklist, to check across your tests, and it also gives almost 100+ tests to do on a website. 
 
@@ -24,9 +25,9 @@ juiceshop is made by OWASP. It is a vulnerable website for us to learn a bunch o
 
 **Install docker in kali: https://github.com/juice-shop/juice-shop**
 
-**Step1**: """curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/docker-archive-keyring.gpg >/dev/null"""
+**Step1**: (curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/docker-archive-keyring.gpg >/dev/null)
 
-**Step 2**: """echo 'deb  https://download.docker.com/linux/debian buster stable' | sudo tee /etc/apt/sources.list.d/docker.list"""
+**Step 2**: (echo 'deb  https://download.docker.com/linux/debian buster stable' | sudo tee /etc/apt/sources.list.d/docker.list)
 
 **Step 3**: apt-get update
 
