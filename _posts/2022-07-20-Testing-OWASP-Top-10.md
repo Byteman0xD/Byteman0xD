@@ -322,7 +322,7 @@ its gonna say "Hi Usman" - when you come to the webpage.
 
 now, what if we have something like:
 
-index.php?username=**script alert(1) script** -> thats going to run javascript, and give us an alert pop-up box on the browser, and its gonna say '1' on the pop-up -> that is what reflective looks like. script tags are under <> and </>
+index.php?username=**<script> alert(document.cookie) </script>** -> thats going to run javascript, and give us an alert pop-up box on the browser, and its gonna say '1' on the pop-up -> that is what reflective looks like. script tags are under <> and </>
 
 For stored, think about having a blog post, forum, and you can go and comment on those, what if you leave the above script tags on that comment field, and if the site is vulnerable -> so if everytime, if you or anyone else goes to that page, they can see the pop-up as well.
 
