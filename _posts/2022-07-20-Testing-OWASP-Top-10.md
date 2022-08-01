@@ -323,14 +323,7 @@ its gonna say "Hi Usman" - when you come to the webpage.
 now, what if we have something like:
 
 ##index.php?username=**<script> alert(document.cookie) </script>**
-
-<a onmouseover="
-try{
-    const {shell}=require('');
-    shell.OpenPath('/System/Applications/Calculator.py/')   
-}catch(e){
-    console.error(e)
-}">HOVERME</a>
+<img src=x onerror=alert(1)>
 
  -> thats going to run javascript, and give us an alert pop-up box on the browser, and its gonna say '1' on the pop-up -> that is what reflective looks like. script tags are under <> and </>
 
